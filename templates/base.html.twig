@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %}Welcome!{% endblock %}</title>
+	<link rel="icon"
+	      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+	{% block stylesheets %}
+	{% endblock %}
+	{% block javascripts %}
+		{% block importmap %}{{ importmap('app') }}{% endblock %}
+	{% endblock %}
+</head>
+<body>
+<header>
+	<div class="navbar navbar-dark bg-dark shadow-sm">
+		<div class="container">
+			<a href="#" class="navbar-brand d-flex align-items-center">
+				<strong>Clock Component</strong>
+			</a>
+		</div>
+	</div>
+</header>
+<main>
+	{% block body %}{% endblock %}
+</main>
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+<footer class="text-muted py-5">
+	<div class="container">
+		<p class="float-end mb-1">
+			<a href="#">Back to top</a>
+		</p>
+		<p class="mb-1">Clock component example for Symfony 7 !</p>
+	</div>
+</footer>
+</body>
 </html>

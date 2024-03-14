@@ -1,15 +1,18 @@
 {
-    "controllers": {
-        "@symfony/ux-turbo": {
-            "turbo-core": {
-                "enabled": true,
-                "fetch": "eager"
-            },
-            "mercure-turbo-stream": {
-                "enabled": false,
-                "fetch": "eager"
-            }
+  "controllers": {
+    "@symfony/ux-turbo": {
+      "turbo-core": {
+        "enabled": true,
+        "fetch": "eager",
+        "autoimport": {
+          "bootstrap/dist/css/bootstrap.min.css": true
         }
-    },
-    "entrypoints": []
+      },
+      "mercure-turbo-stream": {
+        "enabled": false,
+        "fetch": "eager"
+      }
+    }
+  },
+  "entrypoints": []
 }

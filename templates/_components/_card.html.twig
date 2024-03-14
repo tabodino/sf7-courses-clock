@@ -1,0 +1,22 @@
+<div class="col {{ isAvailable ? 'available-courses' : 'unavailable-courses' }}">
+	<div class="card shadow-sm">
+		<img class="card-img-top bd-placeholder-img" src="{{ asset(course.thumbnail) }}" alt="Image {{ course.title }}"
+		     width="100%"
+		     height="225">
+		
+		<div class="card-body">
+			<h5 class="card-title">{{ course.title }}</h5>
+			<p class="card-text">{{ course.content[:150] ~ '...' }}</p>
+			<div class="d-flex justify-content-between align-items-center">
+				{% if isAvailable is defined and isAvailable == true %}
+					<button type="button" class="btn btn-sm btn btn-dark">Discover</button>
+				{% elseif isAvailable == false %}
+					<button type="button" class="btn btn-sm btn-outline-danger">Coming soon</button>
+					<small class="text-muted">
+						{{ course.remainingTime|remaining_duration }}
+					</small>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>

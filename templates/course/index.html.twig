@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Courses{% endblock %}
+
+{% block body %}
+	<section class="py-5 text-center container">
+		<div class="row py-lg-5">
+			<div class="col-lg-6 col-md-8 mx-auto">
+				<h1 class="fw-light">Clock Component example</h1>
+				<p class="lead text-muted">
+					The Clock component decouples applications from the system clock.
+					This allows you to fix time to improve testability of time-sensitive logic.
+				</p>
+			</div>
+		</div>
+	</section>
+	
+	<div class="album py-5 bg-light">
+		{% if availableCourses %}
+			<div class="container mb-4">
+				<h2 class="pb-2 mb-4 border-bottom">Available courses</h2>
+				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+					{% for availableCourse in availableCourses %}
+						{% include '_components/_card.html.twig'
+							with {'course': availableCourse, 'isAvailable': true} %}
+					{% endfor %}
+				</div>
+			</div>
+		{% endif %}
+		
+		{% if unavailableCourses %}
+			<div class="container">
+				<h2 class="pb-2 mb-4 border-bottom">Available soon</h2>
+				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+					{% for unavailableCourse in unavailableCourses %}
+						{% include '_components/_card.html.twig'
+							with {'course': unavailableCourse,'isAvailable': false } %}
+					{% endfor %}
+				</div>
+			</div>
+		{% endif %}
+	</div>
+{% endblock %}
