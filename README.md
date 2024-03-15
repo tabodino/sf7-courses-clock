@@ -2,7 +2,10 @@
 
 Support to Medium topic Clock Component on Symfony 7
 
-[Read the article](https://medium.com/@tabodino/composant-clock-avec-symfony-7-d9e96cfc649d) (French version)
+Read the article
+
+[English version](https://medium.com/@tabodino/clock-component-in-symfony-7-512d894c26da) |
+[French version](https://medium.com/@tabodino/composant-clock-avec-symfony-7-d9e96cfc649d)
 
 ![Screenshot](/public/images/screenshot.png)
 
